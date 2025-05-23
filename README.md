@@ -8,7 +8,7 @@
 - [Diagrama](#diagrama)
 - [Como utilizar o programa baixando os arquivos (VSCode)](#como-utilizar-o-programa-baixando-os-arquivos-vscode)
 - [Funcionamento](#funcionamento)
-- [Valores importantes a serem alterados](valores-importantes-a-serem-alterados)
+- [Valores importantes a serem alterados](#valores-importantes-a-serem-alterados)
 - [Cuidados a serem tomados](#cuidados-a-serem-tomados)
 - [Considerações finais](#considerações-finais)
 
