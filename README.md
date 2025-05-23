@@ -37,13 +37,9 @@
 
 ## Plataformas
 
-Utilizei o PlatformIO para a facilitar o processo de codificar tudo o que foi projetado, então você pode encontrar arquivos de configurações relativos a ele no repositório. Para mais informações, consulte:
+Utilizei o PlatformIO para a facilitar o processo de codificar tudo o que foi projetado, então você pode encontrar arquivos de configurações relativos a ele no repositório. Para mais informações, consulte [o site oficial do PlatformIO](https://platformio.org/)
 
-https://platformio.org/
-
-E para comunicação com outros dispositivos, utilizei o SinricPro. Para saber mais, acesse:
-
-https://sinric.pro/
+E para comunicação com outros dispositivos, utilizei o SinricPro. Para saber mais, acesse [o site do SinricPro](https://sinric.pro/).
 
 ### Diagrama
 
@@ -71,8 +67,8 @@ https://sinric.pro/
 9. Vá para *src/main.cpp* no *EXPLORER* e faça as alterações necessárias no código. *Veja o que deve ser alterado* e *os cuidados a serem tomados* nas seções seguintes.
 10. Vá novamente no ícone do PlatformIO e abra o PlatformIO Home;
 11. Vá em *Upload and Monitor* dentro de *PROJECT TASKS*:
-    
-![platformio-home](https://github.com/user-attachments/assets/f7717962-940e-4322-9bad-0b191e10ccec)
+
+![platformio-home](https://github.com/user-attachments/assets/7b565408-97ad-4ee8-baa8-2ef59d7069bf)
 *PlatiformIO Home - Clicar em Upload and Monitor*.
 
 *O acompanhamento do funcionamento será feito pelo terminal do VSCode.*
