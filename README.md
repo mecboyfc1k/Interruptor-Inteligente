@@ -30,7 +30,9 @@
 - Fios necessários para fazer as ligações.
 
 <p align="justify">
+    
 *Atenção!! Cuidado ao fazer as conexões. Garanta que a placa e o sensor trabalhem com a mesma tensão. Caso tenha adquirido um módulo como o DOIT ESP32 DEVKIT V1, que opera a 3v, procure fazer algo como um divisor de tensão para evitar eventuais problemas, ou troque o sensor por outro que trabalhe a 3v.*
+
 </p>
 
 ## Plataformas
@@ -84,6 +86,7 @@ A ideia básica por trás de tudo é bastante simples: o sensor detecta uma vari
 ## Valores importantes a serem alterados
 
 <p align="justify">
+    
 *No início do código você pode notar algumas diretivas de pré-compilação e constantes que ditam como o seu dispositivo vai se comportar, devendo ser ajustados de acordo com sua necessidade. Elas que serão listadas a seguir.*
 
 - **`BAUD_RATE`**: define a velocidade com que os bits são enviados durante a comunicação serial. Isso pode variar de placa para placa.
