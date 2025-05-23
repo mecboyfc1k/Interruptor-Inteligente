@@ -68,8 +68,8 @@ https://sinric.pro/
 
 7. Selecione o diretório do projeto;
 8. Conecte seu dispositivo em uma porta do seu computador (certifique-se de estar usando um USB adequado conectado a uma porta que suporte a comunicação serial);
-9. Vá novamente no ícone do PlatformIO e abra o PlatformIO Home;
-10. Vá para *src/main.cpp* no *EXPLORER* e faça as alterações necessárias no código. *Veja o que deve ser alterado* e *os cuidados a serem tomados* nas seções seguintes.
+9. Vá para *src/main.cpp* no *EXPLORER* e faça as alterações necessárias no código. *Veja o que deve ser alterado* e *os cuidados a serem tomados* nas seções seguintes.
+10. Vá novamente no ícone do PlatformIO e abra o PlatformIO Home;
 11. Vá em *Upload and Monitor* dentro de *PROJECT TASKS*:
     
 ![platformio-home](https://github.com/user-attachments/assets/f7717962-940e-4322-9bad-0b191e10ccec)
@@ -80,7 +80,7 @@ https://sinric.pro/
 ## Funcionamento
 
 <p align="justify">
-A ideia básica por trás de tudo é bastante simples: o sensor detecta uma variação na distância de uma pessoa que entra ou sai do corredor enquanto ela estiver em uma faixa definida de detecção da qual quando a pessoa sair, o sensor verifica a variação total, definindo se a pessoa saiu ou entrou. Cada entrada ou saída é contabilizada numa variável de contagem. Enquanto ela estiver acima de 0, a lâmpada permanecerá acesa, caso contrário, ficará apagada. Fora isso, temos apenas o gerenciamento de conexões e de falhas.
+A ideia básica por trás de tudo é bastante simples: o sensor detecta uma variação na distância de uma pessoa que entra ou sai do corredor enquanto ela estiver em uma faixa definida de detecção da qual quando a pessoa sair, o sensor verifica a variação total, definindo se a pessoa saiu ou entrou. Cada entrada ou saída é contabilizada em uma variável de contagem. Enquanto ela estiver acima de 0, a lâmpada permanecerá acesa, caso contrário, ficará apagada. Fora isso, temos apenas o gerenciamento de conexões e de falhas.
 </p>
 
 ## Valores importantes a serem alterados
@@ -93,7 +93,7 @@ A ideia básica por trás de tudo é bastante simples: o sensor detecta uma vari
 
 - **`TAMANHO_STACK_TASK_PRINCIPAL`**: especifica quantas palavras serão utilizadas na task principal do programa. Varia de processador para processador.
 
-- **`TAMANHO_STACK_VERIFICADORES_CONEXAO`**: especifica quntas palavras esrão utilizadas nas tasks de verificação da conexão com o SinricPro e com o WiFi. Varia de processador para processador.
+- **`TAMANHO_STACK_VERIFICADORES_CONEXAO`**: especifica quantas palavras estarão utilizadas nas tasks de verificação da conexão com o SinricPro e com o WiFi. Varia de processador para processador.
 
 - **`TRIG`**: pino conectado ao trigger do sensor HC-SR04.
 
@@ -101,7 +101,7 @@ A ideia básica por trás de tudo é bastante simples: o sensor detecta uma vari
 
 - **`FAIXA_DETECCAO_CM`**: define o tamanho (em cm) da faixa de detecção, dentro da qual as variações serão consideradas. Qualquer coisa fora da faixa de detecção será ignorada. Note que ela começará a partir de **`INICIO_FAIXA_DETECCAO_CM`**.
 
-- **`INICIO_FAIXA_DETECCAO_CM`**: início da faixa de detecção (em cm). Qualquer coisa quenão esteja entre **`INICIO_FAIXA_DETECCAO_CM`** e **`INICIO_FAIXA_DETECCAO_CM`** + **`FAIXA_DETECCAO_CM`**, será ignorado.
+- **`INICIO_FAIXA_DETECCAO_CM`**: início da faixa de detecção (em cm). Qualquer coisa que não esteja entre **`INICIO_FAIXA_DETECCAO_CM`** e **`INICIO_FAIXA_DETECCAO_CM`** + **`FAIXA_DETECCAO_CM`**, será ignorado.
 
 - **`INTERVALO_AMOSTRAGEM_MOVIMENTO_MS`**: define o delay (em ms) entre cada amostra coletada. Note que não necessariamente será este delay na realidade, mas diminuir ele pode aumentar a velocidade com que o controlador detecta a distância.
 
@@ -131,7 +131,7 @@ A ideia básica por trás de tudo é bastante simples: o sensor detecta uma vari
   
 1. **Verifique se os valores que você utilizou estão de acordo com as capacidades do seu módulo e são suficientes para a execução**: uma stack grande pode desperdiçar espaço ou provocar falhas na alocação, ao passo que uma pequena pode causar estouro de pilha.
 
-2. **Teste os valores relacionados à amostragem**: uma taxa alta pode causar erros que vão desde problemas para notificar o SinricPro até Starvation ( a task principal monopoliza o processador) e uma baixa pode gerar cálculos imprecisos .Uma faixa de detecção grande ou pequena demais pode permitir uma maior chance de erros de detecção, ligando ou desligando o switch quando não deve. Para evitar dores de cabeça, teste bem os valores antes de implantar seu dispositivo definitivamente.
+2. **Teste os valores relacionados à frequência de amostragem.**: uma taxa alta pode causar erros que vão desde problemas para notificar o SinricPro até Starvation ( a task principal monopoliza o processador) e uma baixa pode gerar cálculos imprecisos .Uma faixa de detecção grande ou pequena demais pode permitir uma maior chance de erros de detecção, ligando ou desligando o switch quando não deve. Para evitar dores de cabeça, teste bem os valores antes de implantar seu dispositivo definitivamente.
 
 3. **Verifique os arquivos de configuração**: caso altere o **`BAUD_RATE`** no arquivo **main**, altere o **`monitor_speed`** no [platformio.ini](platformio.ini). Veja se o seu módulo é compatível com as configurações que estão citadas lá.
 
